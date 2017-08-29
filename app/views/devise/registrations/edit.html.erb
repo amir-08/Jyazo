@@ -1,0 +1,56 @@
+<div class="container">
+ <h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+
+
+     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+
+
+    <div>
+ <div class="row">
+  <div class="form-group col-md-4 col-sm-12 col-xs-12">
+      <div class="form-1"> <%=  image_tag("user.png", width:'45px', height: '45px') %>
+      <%= f.text_field :name, autofocus: true, class:"form-control"%></div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="form-group col-md-4 col-sm-12 col-xs-12">
+      <div class="form-1"> <%=  image_tag("dob.png", width:'45px', height: '45px') %>
+      <%= f.date_field :date_of_birth, class:"form-control"%>
+      </div>
+  </div>
+  </div>
+
+   <div class="row">
+  <div class="form-group col-md-4 col-sm-12 col-xs-12">
+      <div class="form-1"> <%=  image_tag("address.png", width:'45px', height: '45px') %>
+      <%= f.text_field :address, autofocus: true, class:"form-control"%></div>
+  </div>
+  </div>
+
+   <div class="row">
+  <div class="form-group col-md-4 col-sm-12 col-xs-12">
+      <div class="form-1"> <%=  image_tag("email.png", width:'45px', height: '45px') %>
+      <%= f.email_field :email, class:"form-control"%></div>
+  </div>
+  </div>
+
+
+
+     <div>
+  <%= f.submit "Update", class:"btn btn-large btn-primary" %>
+  </div>
+      
+        </div>
+
+    <% end %>
+
+    <h3>Cancel my account</h3>
+    <div>
+    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+
+    <%= link_to "Back", :back %>
+    </div>
+</div>

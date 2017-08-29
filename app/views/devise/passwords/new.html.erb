@@ -1,0 +1,47 @@
+<div class="container register">
+<div class="col-md-6 col-md-offset-3">
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+ <div>
+   <%= devise_error_messages! %>
+ </div>
+
+ <div class="form-group centered">
+    <%=  image_tag("forgot.png", width:'200px', height: '50px') %>
+ </div>
+  
+ <%= f.hidden_field :reset_password_token %>
+
+ <div>
+  <div class="row">
+    <div class="form-group col-md-10 col-sm-12 col-xs-12 pad">
+      <div class="form-1"> <%=  image_tag("email.png", width:'45px', height: '45px') %>
+      <%= f.email_field :email, autofocus: true, class:"form-control",:required => true, placeholder: "Email" %>
+       </div>
+    </div>
+  </div>
+
+
+
+  <div>
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+<% end -%>
+</div>
+
+<div >
+<%- if controller_name != 'sessions' %>
+  <%= link_to "I want to LogIn", new_session_path(resource_name) %><br
+<% end -%>
+</div>
+
+  <div><br>
+   <%= f.submit "Send me reset password instructions", class:"btn btn-large btn-primary" %>
+  </div>
+
+
+</div>
+</div>
+</div>
+<% end%>
+  

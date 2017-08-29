@@ -1,0 +1,70 @@
+
+<%= form_for(event) do |f| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div>
+ <div class="row">
+  <div class="form-group col-md-4 col-sm-12 col-xs-12">
+      <div class="form-1"> <%=  image_tag("ename.png", width:'45px', height: '45px') %>
+      <%= f.text_field :event_name, autofocus: true, class:"form-control",:required => true, placeholder: "Event name" %></div>
+  </div>
+  </div>
+
+<div class="row">
+  <div class="form-group col-md-4 col-sm-12 col-xs-12">
+      <div class="form-1"> <%=  image_tag("estart.png", width:'45px', height: '45px') %>
+      <%= f.date_field :start_date, autocomplete: "off",:required => true, class:"form-control"%>
+      </div>
+  </div>
+  </div>
+
+<div class="row">
+  <div class="form-group col-md-4 col-sm-12 col-xs-12">
+      <div class="form-1"> <%=  image_tag("eend.png", width:'45px', height: '45px') %>
+      <%= f.date_field:end_date, autocomplete: "off",:required => true, class:"form-control"%>
+      </div>
+  </div>
+</div>
+
+
+<div class="row">
+    <div class="form-group col-md-4 col-sm-12 col-xs-12">
+      <div class="form-1"> <%=  image_tag("elocation.png", width:'45px', height: '45px') %>
+      <%= f.text_field :address, autofocus: true, class:"form-control",:required => true, placeholder: "Address" %></div>
+  </div>
+  </div>
+  
+  <div class="row">
+   <div class="form-group col-md-4 col-sm-12 col-xs-12">
+      <div class="form-1"> <%=  image_tag("eorgaizer.png", width:'45px', height: '45px') %>
+      <%= f.text_field :organizer , autofocus: true, class:"form-control",:required => true, placeholder: "Organizer's" %></div>
+  </div>
+  </div>
+
+
+<div class="row">
+    <div class="form-group col-md-4 col-sm-12 col-xs-12">
+      <div class="form-1"> <%=  image_tag("edetail.png", width:'45px', height: '45px') %>&nbsp;
+      <%= f.text_field :detail , autofocus: true, class:"form-control",:required => true, placeholder: "Detail about the event" %></div>
+  </div>
+  </div>
+
+  <div>
+  <%= f.submit "Submit", class:"btn btn-large btn-primary" %>
+  </div>
+  
+<br>
+  </div>
+
+<% end %>

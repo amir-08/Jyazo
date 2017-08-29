@@ -1,0 +1,40 @@
+<div id="myCarousel" class="container carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner ">
+    <div class="item active">
+      <%= image_tag("1.png", :style => "height: 515px") %>
+    </div>
+
+    <div class="item">
+     <%= image_tag("2.png", :style => "height: 515px") %>
+    </div>
+
+    <div class="item">
+     <%= image_tag("1.png", :style => "height: 515px") %>
+    </div>
+
+
+        <div class="item">
+     <%= image_tag("2.png", :style => "height: 515px") %>
+    </div>
+
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control left1" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control left2" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

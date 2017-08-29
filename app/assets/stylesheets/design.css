@@ -1,0 +1,121 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require bootstrap
+ *= require bootstrap_responsive
+ *= require my_styles
+ */
+
+
+.nav{
+	margin-top : 10px;
+}
+
+.middle{
+	margin-top: 16px;
+	margin-right: 2px;
+}
+.middle1{
+margin-top: -8px;
+	
+}
+.nav1{
+	margin-top: -8px;
+}
+
+
+.form-1 img{
+	
+	.middle{
+	margin-top: 16px;
+	margin-right: -11px;
+		}
+	width: 45px;
+	float: left;
+}
+
+.form-1 input{
+	width: 80%;
+	float: left;
+}
+input.radio1{
+	width: 20%;
+	float:left;
+}
+
+.register{
+	margin-top: -493px;
+}
+
+@media (max-width: 767px){
+	.register{
+		margin-top: 0;
+	}
+	.carousel{
+		display: none;
+	}
+}
+
+.left1{
+	    left: 15px;
+}
+
+.left2{
+	right: 15px;
+	left: auto;
+}
+
+.centered{
+
+	    text-align: center;
+    }
+ .style1{
+   	height: 515px;
+   	width: 1550px;
+   }
+
+
+
+.color1{
+	    color: #777;
+    text-decoration: none;
+}
+.form-2 input{
+	width: auto;
+	float: left;
+}
+.red{
+	color: red;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: #555;
+}
+
+.navbar-right .dropdown-menu {
+    right: -15px;
+    left: auto;
+  }
+
+
+.middle3{
+	padding-left: 30%;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+<div class="container register">
+<div class="col-md-6 col-md-offset-3">
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+ <div >
+ <%= devise_error_messages! %></div>
+
+
+<%-# SignUp -%>
+ <div class="form-group centered" >
+     <%=  image_tag("signup.png", width:'120px', height: '50px') %>
+  </div>
+
+
+  <%-# LogIn -%>
+<div class="form-group centered">
+<%- if controller_name != 'sessions' %>
+  <p>Already have an account?? <%= link_to "Log in", new_session_path(resource_name) %></p>
+<% end -%>
+</div>
+
+
+<div class="row">
+<%-# name -%>
+ <div class="form-group col-md-6 col-sm-12 col-xs-12">
+      <div class="form-1"> <%=  image_tag("user.png", width:'45px', height: '45px') %>
+       <%= f.text_field :name, class:"form-control", autofocus: true,:required => true,placeholder: "Name"  %></div>
+  </div>
+
+<%-# email -%>
+   <div class="form-group col-md-6 col-sm-12 col-xs-12" >
+    <div class="form-1"> <%=  image_tag("email.png", width:'45px', height: '45px') %>
+      <%= f.email_field :email,:required => true, autofocus: true, class:"form-control", placeholder: "Email" %>
+      </div>
+  </div> 
+  </div>
+
+
+  <div class="row">
+  <%-# password -%>
+   <div class="form-group col-md-6 col-sm-12 col-xs-12">
+     <div class="form-1"> <%=  image_tag("pass.png", width:'45px', height: '45px') %>
+      <%= f.password_field :password, :required => true,autocomplete: "off", class:"form-control", placeholder: "Password" %>
+        <% if @minimum_password_length %>
+    <em>  (<%= @minimum_password_length %>characters minimum)</em>
+    <% end %>
+     
+  </div>
+  </div>
+
+
+<%-# password confirmation -%>
+   <div class="form-group col-md-6 col-sm-12 col-xs-12">
+     <div class="form-1"> 
+      <%=  image_tag("cpass.png", width:'45px', height: '45px') %>
+      <%= f.password_field :password_confirmation, :required => true,autocomplete: "off", class:"form-control", placeholder: "Repeat password" %>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+<%-# Date of Birth -%>
+  <div class="form-group col-md-6 col-sm-12 col-xs-12" >
+     <div class="form-1">
+      <%=  image_tag("dob.png", width:'45px', height: '45px') %>
+      <%= f.date_field :date_of_birth, class:"form-control", autofocus: true,:required => true %>
+      </div>   
+  </div>
+
+<%-# Address -%>
+<div class="form-group col-md-6 col-sm-12 col-xs-12" >
+     <div class="form-1">
+       <%=  image_tag("address.png", width:'45px', height: '45px') %>
+      <%= f.text_field :address, class:"form-control", autofocus: true,:required => true,:size=>"17" ,placeholder: "Address" %>
+      </div>   
+  </div>
+</div>
+
+<div class="row">
+<%-# Gender-%>
+     <div class="form-group col-md-6 col-sm-12 col-xs-12" >
+     <div class="form-1">
+      <%=  image_tag("gender.png", width:'45px', height: '45px') %>
+ <div><%= f.radio_button :is_female, '1' ,:checked => "checked", class: "radio1"%> <%= f.label :is_female, "Female" %></div>
+  <div> <%= f.radio_button :is_female, '0', class: "radio1" %> <%= f.label :is_female, "Male"%></div></div></div>
+
+<%-# Roles -%>
+  <div class="form-group col-md-6 col-sm-12 col-xs-12 " >
+  <div class="form-1">
+       <%=  image_tag("type.png", width:'45px', height: '45px') %>
+     <% for role in User::ROLES %>
+ <div><%= radio_button_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]", :checked => "checked", class:"radio1"}%></div>
+ <%= label_tag "user_roles_#{role}", role.to_s.humanize %>
+<% end %>
+<%= hidden_field_tag "user[roles][]", "" %>
+</div>
+  </div>
+</div>
+
+
+<%-# Confirmation -%>
+<div class="form-group centered">
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+<% end -%>
+</div>
+
+<%-# Submit Button -%>
+   <div class="form-group centered">
+   <%= f.submit "Sign up", class:"btn btn-large btn-primary" %>
+  </div>
+<% end %>
+
+
+</div>
+</div>
